@@ -1,23 +1,15 @@
 # Vonage Windows SDK Samples
 
 This repository provides sample applications for you to better understand the features of
-the [Vonage Windows SDK](https://tokbox.com/developer/sdks/windows/). Feel free to copy
+the [Vonage Windows SDK](https://developer.vonage.com/en/video/client-sdks/windows/overview). Feel free to copy
 and modify the source code herein for your own projects. Please consider sharing your
-modifications with us, especially if they might benefit other developers using the OpenTok
+modifications with us, especially if they might benefit other developers using the Vonage
 Windows SDK. See the License for more information.
 
 ## Quick Start
 
-1. Get values for your OpenTok **API key**, **session ID**, and **token**.
-
-   You can obtain these values from your [TokBox account](#https://tokbox.com/account/#/).
-   Make sure that the token isn't expired.
-
-   For testing, you can use a session ID and token generated at your TokBox account page.
-   However, the final application should obtain these values using the [OpenTok server
-   SDKs](https://tokbox.com/developer/sdks/server/). For more information, see the OpenTok
-   developer guides on [session creation](https://tokbox.com/developer/guides/create-session/)
-   and [token creation](https://tokbox.com/developer/guides/create-token/).
+1. Get values for your Vonage **Application ID**, **Session ID**, and **Token**. 
+   See [Obtaining Vonage Credentials](#obtaining-vonage-credentials) for important information.
 
 2. In Visual Studio, open the .sln solution file for the sample app you are using
    (CustomVideoRenderer/CustomVideoRenderer.sln, ScreenSharing/ScreenSharing.sln,
