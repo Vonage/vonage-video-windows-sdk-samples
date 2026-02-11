@@ -90,20 +90,40 @@ This sample uses the AudioData API to record the audio received by a subscriber 
 
 This sample implements the capturer subsystem of a custom audio device (IAudioDevice) to record received audio to a wav file.
 
+## Obtaining Vonage Credentials
+
+[Step by step tutorial](https://developer.vonage.com/en/video/getting-started)
+
+To use the Vonage platform you need a session ID, token, and APP ID.
+You can get these values by creating a project in your [Vonage Dashboard](https://dashboard.vonage.com/), using the project Tools. 
+For production deployment, you must generate the session ID and token values using one of the [Vonage Server
+SDKs](https://developer.vonage.com/en/video/server-sdks/overview).
+
+### Obtaining OpenTok Credentials
+
+To use the OpenTok platform you need a session ID, token, and API key.
+You can get these values by creating a project on your [OpenTok Account
+Page](https://tokbox.com/account/) and scrolling down to the Project Tools
+section of your Project page. For production deployment, you must generate the
+session ID and token values using one of the [OpenTok Server
+SDKs](https://tokbox.com/developer/sdks/server/).
+
 ## Development and Contributing
 
 Interested in contributing? We :heart: pull requests! See the
 [Contribution](CONTRIBUTING.md) guidelines.
+
 
 ## Getting Help
 
 We love to hear from you so if you have questions, comments or find a bug in the project, let us know! You can either:
 
 - Open an issue on this repository
-- See <https://support.tokbox.com/> for support options
+- See [Vonage support](https://api.support.vonage.com/) for support options
 - Tweet at us! We're [@VonageDev](https://twitter.com/VonageDev) on Twitter
 - Or [join the Vonage Developer Community Slack](https://developer.nexmo.com/community/slack)
 
 ## Further Reading
 
-- Check out the Developer Documentation at <https://tokbox.com/developer/>
+- Check out the [Developer Documentation](https://developer.vonage.com/)
+- [Vonage Windows SDK reference](https://vonage.github.io/video-docs/video-windows-reference/latest/)
