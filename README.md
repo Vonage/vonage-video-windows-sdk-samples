@@ -50,14 +50,14 @@ This app shows how to implement a video call application with several clients.
 ### CustomVideoRenderer
 
 This app shows how to use a custom video renderer. Most applications work fine with the default
-renderer (VideoRenderer) included with the OpenTok Windows SDK. However, if you need to add
+renderer (VideoRenderer) included with the Vonage Windows SDK. However, if you need to add
 custom effects, this sample application provides an understanding of how to implement a custom
 video renderer.
 
 ### ScreenSharing
 
 This app shows how to publish a screen-sharing stream to a session. This implements a custom video
-capturer to capturer to capture the screen as the video source for an OpenTok publisher.
+capturer to capturer to capture the screen as the video source for an Vonage publisher.
 
 ### FrameMetadata
 
