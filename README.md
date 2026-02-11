@@ -15,12 +15,12 @@ Windows SDK. See the License for more information.
    (CustomVideoRenderer/CustomVideoRenderer.sln, ScreenSharing/ScreenSharing.sln,
    or SimpleMultiparty/SimpleMultiparty.sln).
 
-3. Open the MainWindow.xaml.cs file for the app and edit the values for `API_KEY`, `SESSION_ID`,
+3. Open the MainWindow.xaml.cs file for the app and edit the values for `APP_ID`, `SESSION_ID`,
    and `TOKEN` to match API key, session ID, and token data you obtained in step 1.
 
-NuGet automatically installs the OpenTok SDK when you build the project.
+NuGet automatically installs the Vonage SDK when you build the project.
 
-**Test on non-development machines**: OpenTok SDK includes native code that depends on
+**Test on non-development machines**: Vonage SDK includes native code that depends on
 [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48145 "Visual C++ Redistributable for Visual Studio 2015"). It's probably
 already installed on your development machine but not on test
 machines. Also, you may need 32-bit version even if all your code is
