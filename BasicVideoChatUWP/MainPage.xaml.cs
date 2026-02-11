@@ -18,7 +18,7 @@ namespace BasicVideoChatUWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string API_KEY = "";
+        private const string APP_ID = "";
         private const string SESSION_ID = "";
         private const string TOKEN = "";
 
@@ -43,11 +43,11 @@ namespace BasicVideoChatUWP
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(API_KEY) || string.IsNullOrWhiteSpace(SESSION_ID))
+            if (string.IsNullOrWhiteSpace(APP_ID) || string.IsNullOrWhiteSpace(SESSION_ID))
             {
-                throw new Exception("ApiKey, SessionId and Token parameters must be provided inside .config file");
+                throw new Exception("AppId, SessionId and Token parameters must be provided inside .config file");
             }
-            session = new Session.Builder(context, API_KEY, SESSION_ID).Build();
+            session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
 
             session.Connected += Session_Connected;
             session.Disconnected += Session_Disconnected;
@@ -180,7 +180,7 @@ namespace BasicVideoChatUWP
                 {
                     if (string.IsNullOrWhiteSpace(TOKEN))
                     {
-                        throw new Exception("ApiKey, SessionId and Token parameters must be provided inside .config file");
+                        throw new Exception("AppId, SessionId and Token parameters must be provided inside .config file");
                     }
                     session.Connect(TOKEN);
                 }
