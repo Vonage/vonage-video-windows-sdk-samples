@@ -16,7 +16,7 @@ Windows SDK. See the License for more information.
    or SimpleMultiparty/SimpleMultiparty.sln).
 
 3. Open the MainWindow.xaml.cs file for the app and edit the values for `APP_ID`, `SESSION_ID`,
-   and `TOKEN` to match API key, session ID, and token data you obtained in step 1.
+   and `TOKEN` to match Application ID, session ID, and token data you obtained in step 1.
 
 NuGet automatically installs the Vonage SDK when you build the project.
 
@@ -99,7 +99,7 @@ You can get these values by creating a project in your [Vonage Dashboard](https:
 For production deployment, you must generate the session ID and token values using one of the [Vonage Server
 SDKs](https://developer.vonage.com/en/video/server-sdks/overview).
 
-### Obtaining OpenTok Credentials
+#### Obtaining OpenTok Credentials
 
 To use the OpenTok platform you need a session ID, token, and API key.
 You can get these values by creating a project on your [OpenTok Account
@@ -112,7 +112,6 @@ SDKs](https://tokbox.com/developer/sdks/server/).
 
 Interested in contributing? We :heart: pull requests! See the
 [Contribution](CONTRIBUTING.md) guidelines.
-
 
 ## Getting Help
 
