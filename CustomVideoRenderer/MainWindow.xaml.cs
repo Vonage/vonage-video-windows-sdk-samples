@@ -11,7 +11,7 @@ namespace CustomVideoRenderer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string API_KEY = "";
+        private const string APP_ID = "";
         private const string SESSION_ID = "";
         private const string TOKEN = "";
 
@@ -48,15 +48,15 @@ namespace CustomVideoRenderer
                 Capturer = Capturer
             }.Build();
 
-            if (API_KEY == "" || SESSION_ID == "" || TOKEN == "")
+            if (APP_ID == "" || SESSION_ID == "" || TOKEN == "")
             {
-                MessageBox.Show("Please fill out the API_KEY, SESSION_ID and TOKEN variables in the source code " +
+                MessageBox.Show("Please fill out the APP_ID, SESSION_ID and TOKEN variables in the source code " +
                     "in order to connect to the session", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 ConnectDisconnectButton.IsEnabled = false;
             }
             else
             {
-                Session = new Session.Builder(Context.Instance, API_KEY, SESSION_ID).Build();
+                Session = new Session.Builder(Context.Instance, APP_ID, SESSION_ID).Build();
 
                 Session.Connected += Session_Connected;
                 Session.Disconnected += Session_Disconnected;

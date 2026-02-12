@@ -10,7 +10,7 @@ namespace CustomAudioFileCapturer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string API_KEY = "";
+        private const string APP_ID = "";
         private const string SESSION_ID = "";
         private const string TOKEN = "";
 
@@ -37,7 +37,7 @@ namespace CustomAudioFileCapturer
                 HasAudioTrack = true
             }.Build();
 
-            session = new Session.Builder(context, API_KEY, SESSION_ID).Build();
+            session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
             session.Connected += Session_Connected;
             session.Disconnected += Session_Disconnected;
             session.Error += Session_Error;

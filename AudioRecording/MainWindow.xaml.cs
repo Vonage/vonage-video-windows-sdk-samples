@@ -10,7 +10,7 @@ namespace AudioRecording
 {
     public partial class MainWindow : Window
     {
-        private const string API_KEY = "";
+        private const string APP_ID = "";
         private const string SESSION_ID = "";
         private const string TOKEN = "";
         private const string OUTPUT_FILE_PATH = "C:\\temp\\audio.wav";
@@ -45,7 +45,7 @@ namespace AudioRecording
                 Renderer = PublisherVideo
             }.Build();
 
-            session = new Session.Builder(context, API_KEY, SESSION_ID).Build();
+            session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
             session.Connected += Session_Connected;
             session.Disconnected += Session_Disconnected;
             session.Error += Session_Error;

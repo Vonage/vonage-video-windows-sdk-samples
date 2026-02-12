@@ -14,7 +14,7 @@ namespace VideoTransformers
 {
     public partial class MainWindow : Window
     {
-        private const string API_KEY = "";
+        private const string APP_ID = "";
         private const string SESSION_ID = "";
         private const string TOKEN = "";
 
@@ -48,7 +48,7 @@ namespace VideoTransformers
                 throw new Exception("No audio capture devices detected");
             AudioDevice.SetInputAudioDevice(availableMics[0]);
 
-            Session = new Session.Builder(context, API_KEY, SESSION_ID).Build();
+            Session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
             Session.Connected += Session_Connected;
             Session.Disconnected += Session_Disconnected;
             Session.Error += Session_Error;
