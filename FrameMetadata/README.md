@@ -17,12 +17,11 @@ for this repository.
 SampleVideoCapturer.cs
 ----------------------
 
-The SampleVideoCapturer class implements the `IVideoCapturer` interface defined in the OpenTok
-Windows SDK. 
+The SampleVideoCapturer class implements the `IVideoCapturer` interface defined in the Vonage Windows SDK. 
 
 The `Init()` method of the SampleVideoCapturer (inherited from the `IVideoCapturer`
 interface) is called when the video capturer is initialized. An object that implements
-the `IVideoFrameConsumer` interface (defined by the OpenTok Windows SDK) is passed into
+the `IVideoFrameConsumer` interface (defined by the Vonage Windows SDK) is passed into
 the method:
 
 ```csharp
@@ -45,7 +44,7 @@ public void Start()
 ```
 
 The `OnTimedEvent()` method is called at each interval of the timer. It creates an instance of
-the VideoFrame class (also defined by the OpenTok Windows SDK), which represents the video frame
+the VideoFrame class (also defined by the Vonage Windows SDK), which represents the video frame
 to be used by the video capturer:
 
 ```csharp
@@ -72,7 +71,7 @@ to a DateTime timestamp.
 SampleVideoRenderer.cs
 ----------------------
 
-The SampleVideoRenderer class implements the `IVideoRenderer` interface defined in the OpenTok
+The SampleVideoRenderer class implements the `IVideoRenderer` interface defined in the Vonage
 Windows SDK. That interface contains one method: `RenderFrame(VideoFrame)`. This method is called
 when a new frame is ready to be drawn.
 
@@ -93,7 +92,7 @@ To draw the frames, the SampleVideoRenderer class is a WPF Control, and it uses 
 `Background` property to fill the control with the contents of the frame. The SampleVideoRenderer
 class creates a `WriteableBitmap` object, which is updated with every frame (when the `RenderFrame`
 method is called). The `frame` object passed into the `RenderFrame(VideoFrame)` method is an
-instance of the VideoFrame class, defined by the OpenTok Windows SDK. The
+instance of the VideoFrame class, defined by the Vonage Windows SDK. The
 `ConvertInPlace(destinationFormat, planes, strides)` method of this object copies the video frame
 to the `BackBuffer` property of the WriteableBitmap object:
 
