@@ -1,8 +1,8 @@
 ScreenSharing
 =============
 
-This project shows how to use OpenTok Windows SDK to publish a stream that uses
-the content of the screen as the video source for an OpenTok publisher.
+This project shows how to use Vonage Windows SDK to publish a stream that uses
+the content of the screen as the video source for an Vonage publisher.
 
 *Important:* To use this application, follow the instructions in the
 [Quick Start](../README.md#quick-start) section of the main README file
@@ -17,9 +17,9 @@ ScreenSharingCapturer.cs
 ------------------------
 
 This is the core class of the sample application. It captures the contents of the
-screen and uses the frames as the video source for an OpenTok Publisher object.
+screen and uses the frames as the video source for a Publisher object.
 
-To be able to provide frames to the OpenTok SDK you need to implement the
+To be able to provide frames to the Vonage SDK you need to implement the
 `IVideoCapturer` interface. This is also known as building your own video Capturer.
 
 The app returns the capture settings in the implementation of the
@@ -39,13 +39,13 @@ public VideoCaptureSettings GetCaptureSettings()
 ```
 
 The application implements the `Init(frameConsumer)`, `Start()`, `Stop()`, and `Destroy()` methods
-defined by the `IVideoCapturer` interface of the OpenTok Windows SDK. The OpenTok SDK manages the
+defined by the `IVideoCapturer` interface of the Vonage Windows SDK. The OpenTok SDK manages the
 capturer lifecycle by calling these methods when the Publisher initializes the video capturer,
 when it starts requesting frames, when it stops capturing frames, and when the capturer is
 destroyed.
 
 Note that the `Init` method contains a `frameConsumer` parameter. This object is defined by the
-`IVideoFrameConsumer` interface of the OpenTok Windows SDK. The app saves that parameter value and
+`IVideoFrameConsumer` interface of the Vonage Windows SDK. The app saves that parameter value and
 uses it to provide a frame to the custom video capturer for the Publisher.
 
 Whenever a frame is ready, the app calls the `Consume(frame)` method of the `frameConsumer`
