@@ -1,11 +1,11 @@
 CustomVideoRenderer
 =====================
 
-This project uses the custom video renderer features in the OpenTok Windows SDK.
+This project uses the custom video renderer features in the Vonage Windows SDK.
 By the end of a code review, you should have a basic understanding of the
-internals of the OpenTok video renderer API.
+internals of the Vonage video renderer API.
 
-Most applications work fine with the default renderer (VideoRenderer) included with the OpenTok
+Most applications work fine with the default renderer (VideoRenderer) included with the Vonage
 Windows SDK. However, you can define a custom video renderer to add custom effects. For example,
 when the user clicks a button, this sample application adds a blue filter to the rendered video.
 
@@ -16,7 +16,7 @@ for this repository.
 SampleVideoRenderer.cs
 ----------------------
 
-The SampleVideoRenderer class implements the `IVideoRenderer` interface defined in the OpenTok
+The SampleVideoRenderer class implements the `IVideoRenderer` interface defined in the Vonage
 Windows SDK. That interface contains one method: `RenderFrame(VideoFrame)`. This method is called
 when a new frame is ready to be drawn.
 
@@ -24,7 +24,7 @@ To draw the frames, the SampleVideoRenderer class is a WPF Control, and it uses 
 `Background` property to fill the control with the contents of the frame. The SampleVideoRenderer
 class creates a `WriteableBitmap` object, which is updated with every frame (when the `RenderFrame`
 method is called). The `frame` object passed into the `RenderFrame(VideoFrame)` method is an
-instance of the VideoFrame class, defined by the OpenTok Windows SDK. The
+instance of the VideoFrame class, defined by the Vonage Windows SDK. The
 `ConvertInPlace(destinationFormat, planes, strides)` method of this object copies the video frame
 to the `BackBuffer` property of the WriteableBitmap object:
 

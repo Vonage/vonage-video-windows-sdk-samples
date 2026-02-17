@@ -2,9 +2,9 @@ SimpleMultiParty
 ================
 
 SimpleMultiParty builds on the BasicVideoChat sample application, by adding features for
-multi-party calls. See the [Basic tutorial at the OpenTok developer
-center](https://tokbox.com/developer/tutorials/windows/basic-video-chat/) for a description
-of how to connect to an OpenTok session and how to publish and subscribe to streams in a session.
+multi-party calls. See the [Basic tutorial at the Vonage developer
+center](https://developer.vonage.com/en/tutorials/basic-video-chat/introduction/windows/) for a description
+of how to connect to an Vonage session and how to publish and subscribe to streams in a session.
 
 *Important:* To use this application, follow the instructions in the
 [Quick Start](../README.md#quick-start) section of the main README file for this repository.
@@ -14,7 +14,7 @@ MainWindow.xaml
 
 The Grid element in the MainWindow.xaml includes a `SubscriberGrid` element, which is a
 `UniformGrid` used to display the video renderers for the subscribers for each stream
-in the OpenTok session.
+in the Vonage session.
 
 ```xml
 <Grid>
@@ -96,7 +96,7 @@ private void Session_StreamDropped(object sender, Session.StreamEventArgs e)
 }
 ```
 
-The app clears the `SubscriberGrid` when it disconnects from the OpenTok session:
+The app clears the `SubscriberGrid` when it disconnects from the Vonage session:
 
 private void Session_Disconnected(object sender, EventArgs e)
 {
