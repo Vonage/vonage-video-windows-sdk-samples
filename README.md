@@ -99,15 +99,6 @@ You can get these values by creating a project in your [Vonage Dashboard](https:
 For production deployment, you must generate the session ID and token values using one of the [Vonage Server
 SDKs](https://developer.vonage.com/en/video/server-sdks/overview).
 
-#### Obtaining OpenTok Credentials
-
-To use the OpenTok platform you need a session ID, token, and API key.
-You can get these values by creating a project on your [OpenTok Account
-Page](https://tokbox.com/account/) and scrolling down to the Project Tools
-section of your Project page. For production deployment, you must generate the
-session ID and token values using one of the [OpenTok Server
-SDKs](https://tokbox.com/developer/sdks/server/).
-
 ## Development and Contributing
 
 Interested in contributing? We :heart: pull requests! See the
