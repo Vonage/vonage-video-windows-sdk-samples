@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.8" />
+    <PackageReference Include="Vonage.Client.Video" Version="2.34.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Usuario\.nuget\packages\vonage.client.video\2.34.0\build\DshowCapturer.dll" />
+  </ItemGroup>
+
+</Project>
