@@ -241,6 +241,13 @@ namespace NonExclusiveVideoCapturer
 
                     mediaCapture.InitializeAsync(settings).Wait();
 
+                    /* Make sure there's at least one valid frame source */
+                    if (mediaCapture.FrameSources == null || mediaCapture.FrameSources.Count == 0)
+                    {
+                        OnErrorEvent(EventType.NoFrameSources);
+                        return;
+                    }
+
                     /* If exclusive control could not be granted, listen for device changes until the device exclusive control becomes available */
                     if (!exclusiveControl)
                     {
@@ -249,13 +256,6 @@ namespace NonExclusiveVideoCapturer
                             if (e.Status == MediaCaptureDeviceExclusiveControlStatus.ExclusiveControlAvailable)
                                 DispatchEvent(EventType.ExclusiveControlAvailable);
                         };
-                    }
-
-                    /* Make sure there's at least one valid frame source */
-                    if (mediaCapture.FrameSources == null || mediaCapture.FrameSources.Count == 0)
-                    {
-                        OnErrorEvent(EventType.NoFrameSources);
-                        return;
                     }
 
                     /* List Frame Sources for initialized device */
@@ -290,6 +290,7 @@ namespace NonExclusiveVideoCapturer
 
                         frameFormat ??= DefaultFrameFormat;
 
+                        /* Get the frame format closest to the selected one */
                         long quantifierDistance = long.MaxValue;
                         MediaFrameFormat? selectedMediaFrameFormat = null;
                         foreach (MediaFrameFormat mediaFrameFormat in mediaFrameSource.SupportedFormats)
