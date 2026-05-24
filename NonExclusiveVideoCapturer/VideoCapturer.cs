@@ -277,17 +277,12 @@ namespace NonExclusiveVideoCapturer
                             mediaFrameSource = availableMediaFrameSource.Value;
                     }
                     Debug.Assert(mediaFrameSource != null);
+                    Debug.Assert(mediaFrameSource.SupportedFormats != null);
+                    Debug.Assert(mediaFrameSource.SupportedFormats.Count > 0);
 
-                    /* If exclusive control is granted, select the closest format possible to the requested one (or ther default one if none is selected) */
+                    /* If exclusive-mode is used, select the closest format possible to the requested one (or ther default one if none is selected) */
                     if (exclusiveControl)
                     {
-                        /* Make sure there's at least one valid frame format */
-                        if (mediaFrameSource.SupportedFormats == null || mediaFrameSource.SupportedFormats.Count == 0)
-                        {
-                            OnErrorEvent(EventType.InvalidFrameSource);
-                            return;
-                        }
-
                         frameFormat ??= DefaultFrameFormat;
 
                         /* Get the frame format closest to the selected one */
@@ -304,6 +299,11 @@ namespace NonExclusiveVideoCapturer
                         Debug.Assert(selectedMediaFrameFormat != null);
                         mediaFrameSource.SetFormatAsync(selectedMediaFrameFormat).Wait();
                     }
+                    else /* If non-exclusive mode just pick the currently used format */
+                    {
+                        mediaFrameSource.SetFormatAsync(mediaFrameSource.CurrentFormat).Wait();
+                    }
+
 
                     Debug.Assert(mediaFrameSource.CurrentFormat != null);
                     frameFormat = ConvertFrameFormat(mediaFrameSource.CurrentFormat);
@@ -339,7 +339,13 @@ namespace NonExclusiveVideoCapturer
                             mediaFrameReference = r.TryAcquireLatestFrame();
                             softwareBitmap = mediaFrameReference?.VideoMediaFrame?.SoftwareBitmap;
                             if (softwareBitmap == null)
+                            {
+                                /*
+                                 * While working in non-exclusive mode, some times softwareBitmap will be null.
+                                 * A possible cause is the original controller selecting mjpg frame format which prevents sharing of the video stream.
+                                 */
                                 return;
+                            }
 
                             PixelFormat pixelFormat = TranslatePixelFormat(softwareBitmap.BitmapPixelFormat);
                             if (pixelFormat == PixelFormat.Unknown)

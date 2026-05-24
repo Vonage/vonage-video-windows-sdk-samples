@@ -8,9 +8,9 @@ namespace NonExclusiveVideoCapturer
 {
     public partial class MainWindow : Window
     {
-        private const string APP_ID = "47797141";
-        private const string SESSION_ID = "2_MX40Nzc5NzE0MX5-MTc3OTQ1OTQyMjkzN356SFlSdktJWDJsM0YySnEyNnpad2NPenN-fn4";
-        private const string TOKEN = "T1==cGFydG5lcl9pZD00Nzc5NzE0MSZzZGtfdmVyc2lvbj0mc2lnPTU2YzQyNmIzZTcyNjQ2NzIzZjkzODljN2Q1YmI1YmMyNTk5OTZhNmY6c2Vzc2lvbl9pZD0yX01YNDBOemM1TnpFME1YNS1NVGMzT1RRMU9UUXlNamt6TjM1NlNGbFNka3RKV0RKc00wWXlTbkV5Tm5wYWQyTlBlbk4tZm40JmNyZWF0ZV90aW1lPTE3Nzk0NTk0MjImZXhwaXJlX3RpbWU9MTc4MjA1MTQyMiZyb2xlPW1vZGVyYXRvciZub25jZT04OWRjNTA0ZS1lYWEzLTQ2NDktYjQ1Yy04YTFkMjRkNjY3ODg=";
+        private const string APP_ID = "";
+        private const string SESSION_ID = "";
+        private const string TOKEN = "";
 
         private Context? Context;
         private Session? Session;
@@ -78,6 +78,7 @@ namespace NonExclusiveVideoCapturer
 
         private void VideoCapturer_Event(object? sender, VideoCapturer.EventArgs e)
         {
+            /* We can subscribe to video capturer events to check for changes in the camera control availability */
             Debug.Assert(videoCapturer != null);
             if (e.Type == VideoCapturer.EventType.ExclusiveControlNotAvailable)
                 videoCapturer.ExclusiveControl = false; /* Hot-switch video capturer to non-exclusive mode */
@@ -91,19 +92,20 @@ namespace NonExclusiveVideoCapturer
         {
             Debug.Assert(videoCapturer != null);
 
-            /* Let's test some of the vidoe capturer capabilities */
-            await Task.Delay(1000);
+            /* Let's test some of the video capturer capabilities */
 
-            /* We can hot-switch to any of the available video capture devices */
-            IReadOnlyList<VideoCapturerDevice> devices = await VideoCapturer.GetDevicesAsync();
-            if (devices.Count > 0)
-                videoCapturer.DeviceId = devices[0].Id;
+            await Task.Delay(3000);
 
-            await Task.Delay(1000);
-
-            /* Now try to change capture resolution. This will only work if camera was opened in exclusive mode (no other app was using the camera) */
+            /* Try to change capture resolution. This will only work if camera was opened in exclusive mode (no other app was using the camera) */
             if (videoCapturer.ExclusiveControl)
                 videoCapturer.FrameFormat = new FrameFormat(320, 240, 30);
+
+            await Task.Delay(3000);
+
+            /* We can hot-switch to any of the available video capture devices. SInce index 0 is selected by default, let's pick last index now (if available) */
+            IReadOnlyList<VideoCapturerDevice> devices = await VideoCapturer.GetDevicesAsync();
+            if (devices.Count > 0)
+                videoCapturer.DeviceId = devices[devices.Count-1].Id;         
         }
     }
 }
