@@ -12,10 +12,10 @@ namespace NonExclusiveVideoCapturer
         private const string SESSION_ID = "";
         private const string TOKEN = "";
 
-        private Context? Context;
-        private Session? Session;
+        private Context? context;
+        private Session? session;
         private VideoCapturer? videoCapturer;
-        private Publisher? Publisher;
+        private Publisher? publisher;
         
         public MainWindow()
         {
@@ -26,35 +26,36 @@ namespace NonExclusiveVideoCapturer
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Context = new Context(new WPFDispatcher());
+            context = new Context(new WPFDispatcher());
                         
             videoCapturer = new VideoCapturer(new WPFDispatcher());
             videoCapturer.Event += VideoCapturer_Event;
 
-            Publisher = new Publisher.Builder(Context)
+            publisher = new Publisher.Builder(context)
             {
                 Capturer = videoCapturer,
                 Renderer = PublisherVideo
             }.Build();
-            Publisher.StreamCreated += Publisher_StreamCreated;
+            publisher.StreamCreated += Publisher_StreamCreated;
 
-            Session = new Session.Builder(Context, APP_ID, SESSION_ID).Build();
-            Session.Connected += Session_Connected;
-            Session.Disconnected += Session_Disconnected;
-            Session.Error += Session_Error;
-            Session.StreamReceived += Session_StreamReceived;
-            Session.Connect(TOKEN);            
+            session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
+            session.Connected += Session_Connected;
+            session.Disconnected += Session_Disconnected;
+            session.Error += Session_Error;
+            session.StreamReceived += Session_StreamReceived;
+            session.Connect(TOKEN);            
         }
 
         private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
-            Session?.Dispose();
-            Publisher?.Dispose();
+            session?.Dispose();
+            publisher?.Dispose();
         }
 
         private void Session_Connected(object? sender, System.EventArgs e)
         {
-            Session?.Publish(Publisher);            
+            Debug.Assert(publisher != null);
+            session?.Publish(publisher);            
         }
 
         private void Session_Disconnected(object? sender, System.EventArgs e)
@@ -69,11 +70,13 @@ namespace NonExclusiveVideoCapturer
 
         private void Session_StreamReceived(object? sender, Session.StreamEventArgs e)
         {
-            Subscriber subscriber = new Subscriber.Builder(Context, e.Stream)
+            Debug.Assert(context != null);
+            Debug.Assert(session != null);
+            Subscriber subscriber = new Subscriber.Builder(context, e.Stream)
             {
                 Renderer = SubscriberVideo
             }.Build();
-            Session?.Subscribe(subscriber);
+            session?.Subscribe(subscriber);
         }
 
         private void VideoCapturer_Event(object? sender, VideoCapturer.EventArgs e)

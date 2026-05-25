@@ -230,7 +230,6 @@ namespace NonExclusiveVideoCapturer
 
                     mediaCapture.Failed += (s, e) =>
                     {
-                        /* If exclusive control was requested and device is already in use, temporarily initialize the device in ReadOnly mode */
                         if (exclusiveControl && e.Code == ErrorCodeHardwareResources)
                             OnErrorEvent(EventType.ExclusiveControlNotAvailable);
                         else if (e.Code == ErrorCodeHardwareInUse)
