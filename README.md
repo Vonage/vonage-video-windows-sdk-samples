@@ -90,6 +90,12 @@ This sample uses the AudioData API to record the audio received by a subscriber 
 
 This sample implements the capturer subsystem of a custom audio device (IAudioDevice) to record received audio to a wav file.
 
+### NonExclusiveVideoCapturer
+
+This sample implements a custom video capturer using MediaCapture framework that can work in exclusive or non-exclusive modes.
+When the sample starts, if the camera is free, it will be opened by the video capturer in exclusive mode, allowing for changes in capturing settings like resolution or frame rate.
+If, on the other hand, the camera is already in use by another application, it will open it in non-exclusive mode, disabling any changes to capture settings but allowing video display.
+
 ## Obtaining Vonage Credentials
 
 [Step by step tutorial](https://developer.vonage.com/en/video/getting-started)
