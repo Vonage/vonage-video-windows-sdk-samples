@@ -111,7 +111,7 @@
       <Version>8.0.8</Version>
     </PackageReference>
     <PackageReference Include="Vonage.Client.Video">
-      <Version>2.34.0</Version>
+      <Version>2.34.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

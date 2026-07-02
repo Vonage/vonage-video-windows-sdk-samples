@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
-    <PackageReference Include="Vonage.Client.Video" Version="2.34.0" />
+    <PackageReference Include="Vonage.Client.Video" Version="2.34.1" />
   </ItemGroup>
 
 </Project>
