@@ -1,0 +1,36 @@
+AudioDeviceNotifications/AudioDeviceNotifications.csproj
+  h_04e2ff0acc76c2 123
+AudioRecording/AudioRecording.csproj
+  h_04e2ff0acc76c2 102
+BasicVideoChat/BasicVideoChat.csproj
+  h_04e2ff0acc76c2 105
+BasicVideoChatUWP/BasicVideoChatUWP.csproj
+  h_04e2ff0acc76c2 96
+BasicVideoChatWinForms/BasicVideoChatWinForms.csproj
+  h_04e2ff0acc76c2 19
+CustomAudioFileCapturer/CustomAudioFileCapturer.csproj
+  h_04e2ff0acc76c2 102
+CustomVideoRenderer/CustomVideoRenderer.csproj
+  h_04e2ff0acc76c2 111
+FileAudioSource/FileAudioSource.csproj
+  h_04e2ff0acc76c2 106
+NonExclusiveVideoCapturer/NonExclusiveVideoCapturer.csproj
+  h_04e2ff0acc76c2 12
+ScreenSharing/ScreenSharing.csproj
+  h_04e2ff0acc76c2 115
+SimpleMultiparty/SimpleMultiparty.csproj
+  h_04e2ff0acc76c2 155
+Transformers/Transformers.csproj
+  h_04e2ff0acc76c2 113,116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "479e0ff12e684ad1f7330fecebb874731b481278",
+  "prompts": {},
+  "humans": {
+    "h_04e2ff0acc76c2": {
+      "author": "sergioturgil-vonage <sergio.turgil@vonage.com>"
+    }
+  }
+}
