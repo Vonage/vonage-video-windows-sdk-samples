@@ -59,12 +59,6 @@ video renderer.
 This app shows how to publish a screen-sharing stream to a session. This implements a custom video
 capturer to capturer to capture the screen as the video source for an Vonage publisher.
 
-### FrameMetadata
-
-This app shows how to add metadata to video frames in a published stream and how to read
-the metadata in a subscriber to the stream. It also shows to to use a very simple custom
-video capturer and custom video renderer.
-
 ### AudioDeviceNotifications
 
 This app shows more advanced management of audio devices with notifications capabilities 
