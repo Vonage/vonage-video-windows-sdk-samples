@@ -50,7 +50,7 @@ This app shows how to implement a video call application with several clients.
 ### CustomVideoCapturer
 
 This app shows how to use a custom video capturer. Most applications work fine with the default
-capturer (VideoCapturer.EnumerateDevices()[0]) included with the SDK. However, if you need capture 
+capturer included with the SDK. However, if you need to capture 
 video from another source you can use this very simple sample as a starting point.
 
 ### CustomVideoRenderer
