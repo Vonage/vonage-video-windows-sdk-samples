@@ -1,6 +1,5 @@
-﻿using OpenTok;
+using OpenTok;
 using System;
-using System.Text;
 using System.Timers;
 using System.Drawing;
 
