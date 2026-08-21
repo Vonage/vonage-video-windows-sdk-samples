@@ -1,6 +1,5 @@
-﻿using OpenTok;
+using OpenTok;
 using System;
-using System.Text;
 using System.Timers;
 using System.Drawing;
 
@@ -15,13 +14,19 @@ namespace CustomVideoCapturer
 
         public void Destroy()
         {
-            timer.Dispose();
+            timer?.Stop();
+            timer?.Dispose();
+            timer = null;
         }
 
         public VideoCaptureSettings GetCaptureSettings()
         {
             VideoCaptureSettings videoCaptureSettings = new VideoCaptureSettings();
+            videoCaptureSettings.Width = WIDTH;
+            videoCaptureSettings.Height = HEIGHT;
             videoCaptureSettings.Fps = 1;
+            videoCaptureSettings.MirrorOnLocalRender = false;
+            videoCaptureSettings.PixelFormat = PixelFormat.FormatYuv420p;
             return videoCaptureSettings;
         }
 
@@ -39,13 +44,16 @@ namespace CustomVideoCapturer
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            Bitmap bitmap = new Bitmap(WIDTH, HEIGHT);
-            Graphics gfx = Graphics.FromImage(bitmap);
-            SolidBrush brush = new SolidBrush(Color.FromArgb(255, 0, 255, 0));
-            gfx.FillRectangle(brush, 0, 0, WIDTH, HEIGHT);
-            VideoFrame frame = VideoFrame.CreateYuv420pFrameFromBitmap(bitmap);
-            frameConsumer.Consume(frame);
-            frame.Dispose();
+            using (var bitmap = new Bitmap(WIDTH, HEIGHT))
+            using (var gfx = Graphics.FromImage(bitmap))
+            using (var brush = new SolidBrush(Color.FromArgb(255, 0, 255, 0)))
+            {
+                gfx.FillRectangle(brush, 0, 0, WIDTH, HEIGHT);
+                using (var frame = VideoFrame.CreateYuv420pFrameFromBitmap(bitmap))
+                {
+                    frameConsumer.Consume(frame);
+                }
+            }
         }
 
         public void SetVideoContentHint(VideoContentHint contentHint)
