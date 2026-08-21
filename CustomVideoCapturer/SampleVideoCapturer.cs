@@ -22,7 +22,11 @@ namespace CustomVideoCapturer
         public VideoCaptureSettings GetCaptureSettings()
         {
             VideoCaptureSettings videoCaptureSettings = new VideoCaptureSettings();
+            videoCaptureSettings.Width = WIDTH;
+            videoCaptureSettings.Height = HEIGHT;
             videoCaptureSettings.Fps = 1;
+            videoCaptureSettings.MirrorOnLocalRender = false;
+            videoCaptureSettings.PixelFormat = PixelFormat.FormatYuv420p;
             return videoCaptureSettings;
         }
 
