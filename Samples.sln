@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAudioFileCapturer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonExclusiveVideoCapturer", "NonExclusiveVideoCapturer\NonExclusiveVideoCapturer.csproj", "{A42B68DF-5EAB-4969-9C2B-EB5FBEEED676}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVideoCapturer", "CustomVideoCapturer\CustomVideoCapturer.csproj", "{9911CB85-0684-41DE-961E-572E06C6FEE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,6 +188,18 @@ Global
 		{A42B68DF-5EAB-4969-9C2B-EB5FBEEED676}.Release|x64.Build.0 = Release|Any CPU
 		{A42B68DF-5EAB-4969-9C2B-EB5FBEEED676}.Release|x86.ActiveCfg = Release|Any CPU
 		{A42B68DF-5EAB-4969-9C2B-EB5FBEEED676}.Release|x86.Build.0 = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|x64.Build.0 = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Debug|x86.Build.0 = Debug|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|x64.ActiveCfg = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|x64.Build.0 = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|x86.ActiveCfg = Release|Any CPU
+		{9911CB85-0684-41DE-961E-572E06C6FEE0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
