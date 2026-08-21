@@ -15,7 +15,9 @@ namespace CustomVideoCapturer
 
         public void Destroy()
         {
-            timer.Dispose();
+            timer?.Stop();
+            timer?.Dispose();
+            timer = null;
         }
 
         public VideoCaptureSettings GetCaptureSettings()
