@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows;
+using OpenTok;
+
+namespace CustomVideoCapturer
+{
+    public partial class MainWindow : Window
+    {
+        private const string APP_ID = "";
+        private const string SESSION_ID = "";
+        private const string TOKEN = "";
+
+        SampleVideoCapturer Capturer;
+        private Context context;
+        private Session Session;
+        private Publisher Publisher;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            context = new Context(new WPFDispatcher());
+
+            // Uncomment following line to get debug logging
+            // Logger.Enable();
+
+            Capturer = new SampleVideoCapturer();            
+            Publisher = new Publisher.Builder(context)
+            {
+                Capturer = Capturer,
+                Renderer = PublisherVideo
+            }.Build();
+
+            Session = new Session.Builder(context, APP_ID, SESSION_ID).Build();
+            Session.Connected += Session_Connected;
+            Session.Disconnected += Session_Disconnected;
+            Session.Error += Session_Error;
+            Session.StreamReceived += Session_StreamReceived;
+            Session.Connect(TOKEN);
+        }
+
+        private void Session_Connected(object sender, System.EventArgs e)
+        {
+            Session.Publish(Publisher);
+        }
+ 
+        private void Session_Disconnected(object sender, System.EventArgs e)
+        {
+            Trace.WriteLine("Session disconnected.");
+        }
+
+        private void Session_Error(object sender, Session.ErrorEventArgs e)
+        {
+            Trace.WriteLine("Session error:" + e.ErrorCode);
+        }
+
+        private void Session_StreamReceived(object sender, Session.StreamEventArgs e)
+        {
+            Subscriber subscriber = new Subscriber.Builder(context, e.Stream)
+            {
+                Renderer = SubscriberVideo
+            }.Build();
+            Session.Subscribe(subscriber);
+        }
+    }
+}
