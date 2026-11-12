@@ -37,8 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTokNetStandard, Version=2.35.1.0, Culture=neutral, PublicKeyToken=446993dbb1ae17c2, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vonage.Client.Video.2.35.1\lib\net462\OpenTokNetStandard.dll</HintPath>
+    <Reference Include="OpenTokNetStandard, Version=2.36.0.0, Culture=neutral, PublicKeyToken=446993dbb1ae17c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vonage.Client.Video.2.36.0\lib\net462\OpenTokNetStandard.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -58,11 +58,11 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WinFormsVideoRenderer, Version=2.35.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vonage.Client.Video.2.35.1\lib\net462\WinFormsVideoRenderer.dll</HintPath>
+    <Reference Include="WinFormsVideoRenderer, Version=2.36.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vonage.Client.Video.2.36.0\lib\net462\WinFormsVideoRenderer.dll</HintPath>
     </Reference>
-    <Reference Include="WPFVideoRenderer, Version=2.35.1.0, Culture=neutral, PublicKeyToken=446993dbb1ae17c2, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vonage.Client.Video.2.35.1\lib\net462\WPFVideoRenderer.dll</HintPath>
+    <Reference Include="WPFVideoRenderer, Version=2.36.0.0, Culture=neutral, PublicKeyToken=446993dbb1ae17c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vonage.Client.Video.2.36.0\lib\net462\WPFVideoRenderer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -111,11 +111,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Vonage.Client.Video.2.35.1\build\Vonage.Client.Video.targets" Condition="Exists('..\packages\Vonage.Client.Video.2.35.1\build\Vonage.Client.Video.targets')" />
+  <Import Project="..\packages\Vonage.Client.Video.2.36.0\build\Vonage.Client.Video.targets" Condition="Exists('..\packages\Vonage.Client.Video.2.36.0\build\Vonage.Client.Video.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Vonage.Client.Video.2.35.1\build\Vonage.Client.Video.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Vonage.Client.Video.2.35.1\build\Vonage.Client.Video.targets'))" />
+    <Error Condition="!Exists('..\packages\Vonage.Client.Video.2.36.0\build\Vonage.Client.Video.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Vonage.Client.Video.2.36.0\build\Vonage.Client.Video.targets'))" />
   </Target>
 </Project>
