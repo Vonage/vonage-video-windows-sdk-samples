@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vonage.Client.Video" Version="2.35.1" />
+    <PackageReference Include="Vonage.Client.Video" Version="2.36.0" />
   </ItemGroup>
 
 </Project>
