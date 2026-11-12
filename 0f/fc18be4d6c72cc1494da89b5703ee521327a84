@@ -1,0 +1,19 @@
+.gitignore
+  s_97d77a293dc9c7::t_f5835704f81251 419-421
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ffc18be4d6c72cc1494da89b5703ee521327a84",
+  "prompts": {},
+  "sessions": {
+    "s_97d77a293dc9c7": {
+      "agent_id": {
+        "tool": "kiro",
+        "id": "sess_64724075-7670-4cb2-bdfa-75cf1f235df7",
+        "model": "auto"
+      },
+      "human_author": "sergioturgil-vonage <sergio.turgil@vonage.com>"
+    }
+  }
+}
